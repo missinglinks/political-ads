@@ -2,6 +2,7 @@
 
 Provides scripts to build datasets of political ads on Facebook and Google services for specific countries.
 
+Also contains Jupyter Notebooks with some exploratory analysis of the datasets.
 
 ## Facebook dataset
 
@@ -17,9 +18,9 @@ countries:
 Run `facebook_ads.py`
 
 ```zsh
-python facebook_ads.py
+$ python facebook_ads.py
 ```
 
 This creates a new dataset and saves it as a .csv and .json file:  
-* `facebook_ads_COUNTRY_TIMESTAMP.csv
-* `facebook_ads_COUNTRY_TIMESTAMP.json
+* `facebook_ads_COUNTRY_TIMESTAMP.csv`
+* `facebook_ads_COUNTRY_TIMESTAMP.json`
