@@ -84,6 +84,27 @@ def build_dataset(output):
     )
 
     json.dump(dataset, open(out_file_json, 'w'), indent=4)
+
+
+    for entry in dataset.values():
+
+        if 'spend' in entry:
+            entry['spend_lower'] = entry['spend']['lower_bound']
+            entry['spend_upper'] = entry['spend']['upper_bound']
+            entry['spend'] = "{}-{}".format(
+                entry['spend_lower'],
+                entry['spend_upper']
+            )
+
+        if 'impressions' in entry:
+            entry['impressions_lower'] = entry['impressions']['lower_bound']
+            entry['impressions_upper'] = entry['impressions']['upper_bound']
+            entry['impressions'] = "{}-{}".format(
+                entry['impressions_lower'],
+                entry['impressions_upper']
+            )
+
+
     df = pd.DataFrame(list(dataset.values()))
     df.to_csv(out_file_csv)
 
